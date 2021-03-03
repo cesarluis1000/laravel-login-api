@@ -67,7 +67,7 @@ class AuthController extends Controller
      * Cierre de sesión (anular el token)
      */
     public function logout(Request $request){
-        
+
         $request->user()->token()->revoke();
 
         return response()->json([
@@ -83,6 +83,9 @@ class AuthController extends Controller
         return response()->json($request->user());
     }
 
+    /**
+     * Obtener hola mundo
+     */
     public function index(){
         echo "Hello World";
     }
